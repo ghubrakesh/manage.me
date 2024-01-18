@@ -9,8 +9,8 @@
 2.
 - [x] Set up the dev environment
 - [x] Create empty project
-- [ ] Create core app and front page
-- [ ] Create about page
+- [x] Create core app and front page
+- [x] Create about page
 3.
 - [ ] Custom user model
 - [ ] Sign up
