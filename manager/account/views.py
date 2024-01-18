@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login as sys_login
+from django.contrib.auth import authenticate, login as sys_login, logout as sys_logout
 from django.shortcuts import render, redirect
 from .models import User
 
@@ -21,6 +21,9 @@ def login(request):
     return render(request, 'account/login.html')
 
 
+def logout(request):
+    sys_logout(request)
+    return redirect('/login')
 
 def signup(request):
     if request.method == 'POST':
