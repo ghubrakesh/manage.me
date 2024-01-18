@@ -1,0 +1,7 @@
+venv
+.idea
+.env
+__init__*
+__pycache__/
+__pycache__/
+*.pyc
