@@ -1,43 +1,44 @@
 ### Todos:
-1. 
+1. Basic template setup
 - [x] Create base template
 - [x] Create front page template
 - [x] Create about page template
 - [x] Create Sign up / Log in templates
 - [x] Basic list page for projects, todolists, etc
 - [x] Basic detail page for projects, todolists, etc
-2.
+2. django setup
 - [x] Set up the dev environment
 - [x] Create empty project
 - [x] Create core app and front page
 - [x] Create about page
-3.
-- [ ] Custom user model
-- [ ] Sign up
-- [ ] Log in
-    - [ ] Project list page
+3. user models
+- [x] Custom user model
+- [x] Sign up
+- [x] Log in
+- [x] Log out
+4. project setup
+- [ ] Project list page
 - [ ] Create project
 - [ ] Project detail page
 - [ ] Edit project
 - [ ] Delete project
-4.
+5. todo list setup
 - [ ] Create todo list
 - [ ] Todo list detail page
 - [ ] Edit todo list
 - [ ] Delete todo list
-5.
+6. task setup
 - [ ] Create tasks
 - [ ] Task detail page
 - [ ] Edit tasks
 - [ ] Delete tasks
-6.
+7. file setup
 - [ ] File uploads for projects
 - [ ] Files list on project page
 - [ ] Delete files
-7.
-- [ ] Deployment
-    - [ ] Set up requirements.txt
-    - [ ] Acorn file
-    - [ ] Docker file
-    - [ ] Configure settings.py
-    - [ ] Deploy and test
+8. Deployment
+- [ ] Set up requirements.txt
+- [ ] Acorn file
+- [ ] Docker file
+- [ ] Configure settings.py
+- [ ] Deploy and test
