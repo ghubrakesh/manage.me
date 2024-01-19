@@ -8,6 +8,23 @@
     {% endif %}
     <small>last modified at: {{ project.last_modified }} </small><br>
 
-    <a href="{% url 'project:edit' project.id %}" class="my-4 py-4 px-8 bg-sky-600 text-white inline-block">Edit</a>
-    <a href="{% url 'project:delete' project.id %}" class="my-4 py-4 px-8 bg-amber-600 text-white inline-block">Delete</a>
+    <a href="{% url 'todolist:add-todo' project.id %}" class="my-4 py-4 px-8 bg-emerald-600 text-white inline-block">Add a new todo</a>
+    <a href="{% url 'project:edit' project.id %}" class="my-4 py-4 px-8 bg-sky-600 text-white inline-block">Edit this Project </a>
+    <a href="{% url 'project:delete' project.id %}" class="my-4 py-4 px-8 bg-amber-600 text-white inline-block">Delete this project</a>
+
+    <h2 class="mt-6 text-2xl">Todolist for the project</h2>
+    <div class="mt-6 grid grid-cols-4 gap-4">
+        {% for todolist in project.todolists.all %}
+            <div class="py-6 px-6 bg-slate-200">
+                <a href="{% url 'todolist:todolist' project.id todolist.id %}">
+                    <h3 class="mb-4 text-xl">{{ todolist.name }}</h3>
+
+                    <p class="text-sm text-slate-600">
+                        {{ todolist.description }}
+                    </p>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
 {% endblock %}

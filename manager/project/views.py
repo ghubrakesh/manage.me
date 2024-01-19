@@ -50,7 +50,7 @@ def edit(request, pk):
             project.last_modified = last_modified
             project.save()
 
-            return redirect('/projects')
+            return redirect(f'/projects/{pk}')
     else:
         return render(request, 'project/edit.html',{
                       "project": project

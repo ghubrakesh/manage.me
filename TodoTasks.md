@@ -23,10 +23,10 @@
 - [x] Edit project
 - [x] Delete project
 5. todo list setup
-- [ ] Create todo list
-- [ ] Todo list detail page
-- [ ] Edit todo list
-- [ ] Delete todo list
+- [x] Create todo list
+- [x] Todo list detail page
+- [x] Edit todo list
+- [x] Delete todo list
 6. task setup
 - [ ] Create tasks
 - [ ] Task detail page
