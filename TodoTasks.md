@@ -17,11 +17,11 @@
 - [x] Log in
 - [x] Log out
 4. project setup
-- [ ] Project list page
-- [ ] Create project
-- [ ] Project detail page
-- [ ] Edit project
-- [ ] Delete project
+- [x] Project list page
+- [x] Create project
+- [x] Project detail page
+- [x] Edit project
+- [x] Delete project
 5. todo list setup
 - [ ] Create todo list
 - [ ] Todo list detail page
