@@ -1,11 +1,11 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    Projects 🏠 / Project / Todolist / Add
-    <form class="mt-6 space-y-4" method="POST" action=".">
+    Projects 🏠 / Project / Todolist / Task / Add
+    <form class="mb-6 mt-6 space-y-4" method="POST" action=".">
         {% csrf_token %}
         <div>
-            <label> Name of Todo</label><br>
+            <label> Name of Task</label><br>
             <input type="text" name="name" class="w-full py-4 px-6 bg-slate-500 text-white">
         </div>
 
@@ -13,6 +13,14 @@
             <label> Description </label><br>
             <input type="text" name="description" class="w-full py-4 px-6 bg-slate-500 text-white">
         </div>
+        
+        <div>
+            <label>
+                <input type="checkbox" name="is_done" class="mr-2">
+                Is Done
+            </label>
+        </div>
+        
         <div>
             <button class="py-4 px-8 bg-sky-600 text-white"> Save </button>
         </div>

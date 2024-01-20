@@ -1,14 +1,41 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <h1 class="mb-6 text-3xl">{{ todolist.name }}</h1>
+    Projects 🏠 / Project / Todolist
+    <h1 class="mt-6 mb-4 text-exl leading-none tracking-tight text-gray-900 md:text-3xl lg:text-6xl">Todolist Title: <span class="font-extrabold underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600"> {{ todolist.name|title }}</span></h1>
 
     {% if todolist.description %}
-        <p class="mb-6">{{ todolist.description }}</p>
+    <p class="text-lg font-normal text-gray-900 lg:text-xl">{{ todolist.description }}</p>
     {% endif %}
+    <a href="{% url 'task:add' project.id todolist.id %}" class="mt-6 px-8 py-4 bg-emerald-600 text-white inline-block">Add a new Task</a>
+    <a href="{% url 'todolist:edit' project.id todolist.id %}" class="mt-6 py-4 px-8 bg-sky-600 text-white inline-block">Edit this todo</a>
+    <a href="{% url 'todolist:delete' project.id todolist.id %}" class="mt-6 py-4 px-8 bg-amber-600 text-white inline-block">Delete this todo </a>
 
-    <a href="{% url 'todolist:edit' project.id todolist.id %}" class="py-4 px-8 bg-sky-600 text-white inline-block">Edit this todo</a>
-    <a href="{% url 'todolist:delete' project.id todolist.id %}" class="py-4 px-8 bg-amber-600 text-white inline-block">Delete this todo </a>
-
+    <h2 class="mt-6 text-2xl font-semibold text-gray-900 ">Tasks for the project: </h2>
+    <div class="mt-6 grid grid-cols-4 gap-4">
+        {% for task in todolist.tasks.all %}
+            <div class="py-6 px-6 bg-slate-200 flex flex-col justify-between">
+                <a href="{% url 'task:task' todolist.project.id todolist.id task.id %}">
+                    <div>
+                        <h3 class="mb-4 text-xl">{{ task.name | title }}</h3>
+                        <p class="text-sm text-slate-600">
+                            {{ task.description | truncatewords:6 }}
+                        </p>
+                    </div>
+        
+                    <div class="mt-auto">
+                        <p class="text-slate-600">
+                            {% if task.is_done %}
+                                <span class="text-emerald-500"> ✔ Completed </span>
+                            {% else %}
+                                <span class="text-red-600"> ✘ Not completed </span>
+                            {% endif %}
+                        </p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
     </div>
+    
+
 {% endblock %}
