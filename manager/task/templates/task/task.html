@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    Projects 🏠 / Project / Todolist / Task
+    <h1 class="mt-6 mb-4 text-exl leading-none tracking-tight text-gray-900 md:text-3xl lg:text-6xl">Task Title: <span class="font-extrabold underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600"> {{ task.name|title }}</span></h1>
+
+    {% if task.description %}
+    <p class="text-lg font-normal text-gray-900 lg:text-xl">{{ task.description }}</p>
+    {% endif %}
+    <p class=" mt-6 text-gray-500 mt-2 block">
+        {% if task.is_done %}
+            <span class="text-emerald-500"> ✔ Completed </span>
+        {% else %}
+            <span class="text-red-600"> ✘ Not completed </span>
+        {% endif %}
+    </p>
+
+    <a href="{% url 'task:edit' task.project.id task.todolist.id task.id %}" class="mt-6 py-4 px-8 bg-sky-600 text-white inline-block">Edit this task</a>
+    <a href="{% url 'task:delete' task.project.id task.todolist.id task.id %}" class="mt-6 py-4 px-8 bg-amber-600 text-white inline-block">Delete this task </a>
+
+{% endblock %}

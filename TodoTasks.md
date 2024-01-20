@@ -28,10 +28,10 @@
 - [x] Edit todo list
 - [x] Delete todo list
 6. task setup
-- [ ] Create tasks
-- [ ] Task detail page
-- [ ] Edit tasks
-- [ ] Delete tasks
+- [x] Create tasks
+- [x] Task detail page
+- [x] Edit tasks
+- [x] Delete tasks
 7. file setup
 - [ ] File uploads for projects
 - [ ] Files list on project page
