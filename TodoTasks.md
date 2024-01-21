@@ -33,9 +33,9 @@
 - [x] Edit tasks
 - [x] Delete tasks
 7. file setup
-- [ ] File uploads for projects
-- [ ] Files list on project page
-- [ ] Delete files
+- [x] File uploads for projects
+- [x] Files list on project page
+- [x] Delete files
 8. Deployment
 - [ ] Set up requirements.txt
 - [ ] Acorn file

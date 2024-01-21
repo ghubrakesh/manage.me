@@ -10,6 +10,7 @@
     <small class="mt-6 text-gray-500 mt-2 block">Last modified at: {{ project.last_modified }}</small>
 
     <a href="{% url 'todolist:add-todo' project.id %}" class="my-4 py-4 px-8 bg-emerald-600 text-white inline-block">Add a new todo</a>
+    <a href="{% url 'project:upload_file' project.id %}" class="my-4 py-4 px-8 bg-slate-600 text-white inline-block">Upload a Project file</a>
     <a href="{% url 'project:edit' project.id %}" class="my-4 py-4 px-8 bg-sky-600 text-white inline-block">Edit this Project </a>
     <a href="{% url 'project:delete' project.id %}" class="my-4 py-4 px-8 bg-amber-600 text-white inline-block">Delete this project</a>
 
@@ -23,6 +24,25 @@
                     <p class="text-sm text-slate-600">
                         {{ todolist.description }}
                     </p>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h2 class="mt-6 text-2xl">Project Files</h2>
+    <div class="mt-6 grid grid-cols-4 gap-4">
+        {% for projectfile in project.files.all %}
+            <div class="py-6 px-6 bg-slate-200">
+                <h3 class="mb-4 text-xl">{{ projectfile.name }}</h3>
+
+                <a href="{{ projectfile.attachment.url }}" target="_blank" class="text-sm text-slate-600">
+                    Download file
+                </a>
+
+                |
+
+                <a href="{% url 'project:delete_file' project.id projectfile.id %}" class="text-sm text-slate-600">
+                    Delete
                 </a>
             </div>
         {% endfor %}
