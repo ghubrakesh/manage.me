@@ -1,33 +1,44 @@
 <!doctype html>
-<html>
+<html lang="en">
+
     <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script src="https://cdn.tailwindcss.com"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            * ::-webkit-scrollbar {     /* To hide scrollbar for Chrome */
+            display: none;
+            }
+            * {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            }
+        </style>
     </head>
-    <body>
-        <nav class="px-6 py-8 flex items-center justify-between bg-slate-800">
+    <body class="flex flex-col min-h-screen">
+        <nav class="px-6 py-6 flex items-center justify-between bg-slate-800 fixed w-full top-0 z-50">
             <h1 class="text-xl text-white"><a href="{% url 'core:index' %}">manage.me</a></h1>
 
             <div class="space-x-4">
-                    <a href="{% url 'core:about' %} " class="text-white"> About</a>
-                    {% if user.is_authenticated %}
-                        <a href="{% url 'project:projects' %}" class="py-4 px-8 bg-sky-600 text-white"> Projects</a>
-                        <a href="{% url 'account:logout' %}" class="py-4 px-8 bg-slate-600 text-white"> Logout </a>
-                    {% else %}
-                        <a href="{% url 'account:login' %}" class="py-4 px-8 bg-sky-600 text-white"> Log in</a>
-                        <a href="{% url 'account:signup' %}" class="py-4 px-8 bg-slate-600 text-white"> Sign up</a>
-                    {% endif %}
+                <a href="{% url 'core:about' %} " class="text-white"> About</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'project:projects' %}" class="py-4 px-8 bg-sky-600 text-white"> Projects</a>
+                <a href="{% url 'account:logout' %}" class="py-4 px-8 bg-slate-600 text-white"> Logout </a>
+                {% else %}
+                <a href="{% url 'account:login' %}" class="py-4 px-8 bg-sky-600 text-white"> Log in</a>
+                <a href="{% url 'account:signup' %}" class="py-4 px-8 bg-slate-600 text-white"> Sign up</a>
+                {% endif %}
             </div>
-
         </nav>
 
-    <main class="py-6 px-8 "> 
-        {% block content %}
-        {% endblock %}
-    </main>
-    <footer class="py-8 px-8 bg-slate-900 text-center">
-        <p class="text-white">Copyright (c) 2023 Rakesh</p>
-    </footer>
+        <main class="mt-20 mb-6 py-6 px-8 flex-grow">
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <footer class="py-8 px-8 bg-slate-900 text-center">
+            <p class="text-white">© 2023 ghubrakesh</p>
+        </footer>
     </body>
+
 </html>
